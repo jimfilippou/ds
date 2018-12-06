@@ -1,14 +1,13 @@
-class Song{
-    int id;
-    String title;
-    int likes;
+class Song {
 
-    public Song(int id, String title, int likes){
+    public int id;
+    public String title;
+    public int likes;
 
-        this.id=id;
-        this.title=title;
-        this.likes=likes;
-
+    public Song(int id, String title, int likes) {
+        this.id = id;
+        this.title = title;
+        this.likes = likes;
     }
 
 }
