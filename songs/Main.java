@@ -8,6 +8,8 @@ import java.util.ArrayList;
 class Main {
     public static void main(String[] args) {
         ArrayList<Song> list = new ArrayList<Song>();
+        QuickSort qs = new QuickSort();
+        int linesMet = 0;
         try {
             BufferedReader br = new BufferedReader(new FileReader("songs.txt"));
             try {
@@ -17,6 +19,7 @@ class Main {
                         String line = br.readLine();
                         if (line == null)
                             break;
+                        linesMet++;
                         String[] data = line.split(" ");
                         String title;
                         int likes = Integer.parseInt(data[data.length - 1]);
@@ -40,8 +43,13 @@ class Main {
                 }
             } finally {
                 br.close();
-                for (Song s : list) {
-                    System.out.println(s.id + " " + s.title + " " + s.likes);
+                int[] arr = new int[linesMet];
+                for (int i = 0; i < list.size(); i++) {
+                    arr[i] = list.get(i).likes;
+                }
+                qs.quickSort(arr, 0, arr.length - 1);
+                for (int var : arr) {
+                    System.out.println(var);
                 }
             }
         } catch (Exception e) {
