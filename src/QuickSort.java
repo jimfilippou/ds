@@ -15,7 +15,6 @@ class QuickSort {
         for (int j = begin; j < end; j++) {
             if (arr[j].likes <= pivot) {
                 i++;
-
                 Song swapTemp = arr[i];
                 arr[i] = arr[j];
                 arr[j] = swapTemp;
