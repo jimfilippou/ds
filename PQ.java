@@ -3,33 +3,6 @@ public class PQ<T extends Comparable<T>> {
     T[] arr;
     int N;
 
-    public static void main(String[] args) {
-        PQ<Integer> pq = new PQ<Integer>();
-        pq.insert(3);
-        System.out.println(pq.toString());
-        pq.insert(5);
-        System.out.println(pq.toString());
-        pq.insert(2);
-        System.out.println(pq.toString());
-        pq.insert(-1);
-        System.out.println(pq.toString());
-        pq.insert(9);
-        System.out.println(pq.toString());
-        pq.insert(4);
-        System.out.println(pq.toString());
-
-        pq.delMax();
-        System.out.println(pq.toString());
-        pq.delMax();
-        System.out.println(pq.toString());
-        pq.delMax();
-        System.out.println(pq.toString());
-        pq.delMax();
-        System.out.println(pq.toString());
-        pq.delMax();
-        System.out.println(pq.toString());
-    }
-
     public PQ() {
         arr = (T[]) new Comparable[2];
         N = 0;
@@ -42,7 +15,7 @@ public class PQ<T extends Comparable<T>> {
         swim(N);
     }
 
-    public T delMax() {
+    public T getMax() {
         if (isEmpty())
             return null;
         T t = arr[1];

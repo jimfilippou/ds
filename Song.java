@@ -1,4 +1,4 @@
-class Song {
+class Song implements Comparable<Song> {
 
     public int id;
     public String title;
@@ -8,6 +8,17 @@ class Song {
         this.id = id;
         this.title = title;
         this.likes = likes;
+    }
+
+    public int compareTo(Song k) {
+        if (this.equals(k))
+            return 0;
+        else if (this.likes > k.likes){
+            return 1;
+        }
+        else {
+            return -1;
+        }
     }
 
 }

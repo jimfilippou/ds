@@ -6,7 +6,7 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-class Main {
+class Top_k {
     public static void main(String[] args) {
         ArrayList<Song> list = new ArrayList<Song>();
         QuickSort qs = new QuickSort();
